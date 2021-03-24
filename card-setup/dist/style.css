@@ -1,0 +1,79 @@
+body {
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://images.unsplash.com/5/unsplash-bonus.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=da7d75bd50bc054b3cd44c46f9a01e0c) center/cover fixed;
+}
+
+.c-phone {
+  max-width: 500px;
+  width: 80%;
+  margin: 20vh auto 0;
+  position: relative;
+  perspective: 700px;
+}
+.c-phone img {
+  transition: 1.2s cubic-bezier(0.5, 0.25, 0, 1.6);
+  transform-style: preserve-3d;
+}
+.c-phone__screen {
+  width: 100%;
+  -webkit-animation: animate-screen 1.2s cubic-bezier(0.5, 0.25, 0, 1.6);
+          animation: animate-screen 1.2s cubic-bezier(0.5, 0.25, 0, 1.6);
+}
+.c-phone__card {
+  width: 58%;
+  position: absolute;
+  top: 12.5%;
+  left: 21.5%;
+  -webkit-animation: animate-card 1.2s cubic-bezier(0.5, 0.25, 0, 1.6);
+          animation: animate-card 1.2s cubic-bezier(0.5, 0.25, 0, 1.6);
+}
+.c-phone:hover img {
+  transition-duration: 0.6s;
+}
+.c-phone:hover .c-phone__screen {
+  transform: scale(0.8) rotate(45deg) rotateY(-40deg);
+  opacity: 0;
+}
+.c-phone:hover .c-phone__card {
+  transform: scale(1.15) rotate(45deg) rotateY(-40deg);
+}
+@-webkit-keyframes animate-screen {
+  from {
+    transform: scale(0.8) rotate(45deg) rotateY(-40deg);
+    opacity: 0;
+  }
+}
+@keyframes animate-screen {
+  from {
+    transform: scale(0.8) rotate(45deg) rotateY(-40deg);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes animate-card {
+  from {
+    transform: scale(1.15) rotate(45deg) rotateY(-40deg);
+  }
+}
+@keyframes animate-card {
+  from {
+    transform: scale(1.15) rotate(45deg) rotateY(-40deg);
+  }
+}
+
+.link {
+  display: inline-block;
+  margin: 130px auto 10vh;
+  padding: 1em 2em;
+  font: bold 1em sans-serif;
+  text-decoration: none;
+  color: #bbb;
+  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
+}
+.link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: transparent;
+}
